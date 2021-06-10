@@ -22,13 +22,13 @@ export const handleUserProfile = async (userAuth, additionalData) => {
 
   if (!snapshot.exists) {
     const { displayName, email } = userAuth;
-    const timeStamp = new Date();
+    const timestamp = new Date();
 
     try {
       await userRef.set({
         displayName,
         email,
-        createdDate: timeStamp,
+        createdDate: timestamp,
         ...additionalData,
       });
     } catch (err) {
